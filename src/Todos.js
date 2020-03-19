@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Todos = ({ todos, deleteTodo }) => {
-
     const todolist = todos.length ? (
         todos.map(todo => {
             return (
@@ -19,6 +18,9 @@ const Todos = ({ todos, deleteTodo }) => {
         )
     return (
         <div className='todos collection'>
+            <div className="container">
+                <h1 className="center blue-text">Todos</h1>
+            </div>
             {todolist}
         </div>
     )

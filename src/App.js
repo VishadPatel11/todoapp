@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import Todos from './Todos';
 import AddTodo from './AddTodo';
+import Navbar from './components/Navbar'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
 
 class App extends Component {
   state = {
@@ -26,11 +31,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="todo-app container">
-        <h1 className="center blue-text">Todos</h1>
-        <Todos todos={this.state.todo} deleteTodo={this.deleteTodo} />
-        <AddTodo addTodo={this.addTodo} />
-      </div>
+      <BrowserRouter>
+        <div className="todo-app container">
+          <Navbar />
+          <Route exact path='/' components={Home} />
+          <Route path='/about' components={About} />
+          <Route path='/contact' components={Contact} />
+          <Route path='/Todos' components={Todos} />
+          <h1 className="center blue-text">Todos</h1>
+          <Todos todos={this.state.todo} deleteTodo={this.deleteTodo} />
+          <AddTodo addTodo={this.addTodo} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
