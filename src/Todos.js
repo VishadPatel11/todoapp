@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Todos = ({ todos, deleteTodo }) => {
-    const todolist = todos.length ? (
-        todos.map(todo => {
+const Todos = ({ todo, deleteTodo }) => {
+    const todolist = todo.length ? (
+        todo.map(todo => {
             return (
                 <div className='collection-item' key={todo.id}>
                     <span onClick={() => {
@@ -17,11 +17,13 @@ const Todos = ({ todos, deleteTodo }) => {
             <p className="center"> you have no todo's left, yay!</p>
         )
     return (
-        <div className='todos collection'>
+        <div>
             <div className="container">
                 <h1 className="center blue-text">Todos</h1>
             </div>
-            {todolist}
+            <div className='todos collection'>
+                {todolist}
+            </div>
         </div>
     )
 }
