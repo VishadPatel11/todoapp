@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav href="true" className="nav-wrapper red darken-3">
+        <nav className="nav-wrapper red darken-3">
             <div className="container">
                 <a href="true" className="brand-logo left">Fun Projects</a>
                 <ul className="right">
@@ -17,4 +17,4 @@ const Navbar = () => {
     )
 
 }
-export default Navbar
+export default withRouter(Navbar)
